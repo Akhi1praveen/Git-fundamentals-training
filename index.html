@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>180° RPM Clock</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Changes made</h1>
-    <p>alslfnaf</p>
-    <link rel="stylesheet" href="">
-<<<<<<< HEAD
-    <button>submit master</button>
-=======
-    <button>submit new-feature</button>
->>>>>>> new-feature
+  <div class="clock">
+    <div class="needle hour" id="hourNeedle"></div>
+    <div class="needle minute" id="minuteNeedle"></div>
+    <div class="center-dot"></div>
+    <div class="labels">
+      <!-- Hour labels from 0 to 12 -->
+      <script>
+        for (let i = 0; i <= 12; i++) {
+          document.write(`<div class="label" style="transform: rotate(${(i * 15) - 90}deg) translateY(-140px) rotate(${-(i * 15 - 90)}deg)">${i}</div>`);
+        }
+      </script>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
