@@ -1,21 +1,28 @@
 body {
-  background: #111;
+  background: #0d0d0d;
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  color: #000000;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .clock {
   position: relative;
   width: 300px;
-  height: 150px;
+  height: 157px;
   border-top-left-radius: 150px;
   border-top-right-radius: 150px;
-  border: 6px solid #333;
-  border-bottom: none;
-  background: #000;
+  background: radial-gradient(circle at center, #111 60%, #000 100%);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -26,26 +33,37 @@ body {
   transform: translateX(-50%);
   width: 12px;
   height: 12px;
-  background: #fff;
+  background: #00ffcc;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 4;
+  box-shadow: 0 0 10px #00ffcc;
 }
 
 .needle {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 4px;
-  height: 120px;
-  background: red;
-  transform-origin: bottom;
-  z-index: 1;
+  width: 2px;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease-in-out;
 }
 
 .hour {
+  height: 60px;
   background: white;
-  height: 80px;
   z-index: 1;
+}
+
+.minute {
+  height: 90px;
+  background: red;
+  z-index: 2;
+}
+
+.second {
+  height: 110px;
+  background: blue;
+  z-index: 3;
 }
 
 .labels {
@@ -60,9 +78,16 @@ body {
   position: absolute;
   bottom: 0;
   left: -10px;
-  color: white;
+  color: #00ffcc;
   font-size: 14px;
   width: 20px;
   text-align: center;
   transform-origin: bottom center;
+}
+
+.digital-time {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff0000;
 }

@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>180° RPM Clock</title>
+  <title>RPM Style Clock</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="clock">
-    <div class="needle hour" id="hourNeedle"></div>
-    <div class="needle minute" id="minuteNeedle"></div>
-    <div class="center-dot"></div>
-    <div class="labels">
-      <!-- Hour labels from 0 to 12 -->
-      <script>
-        for (let i = 0; i <= 12; i++) {
-          document.write(`<div class="label" style="transform: rotate(${(i * 15) - 90}deg) translateY(-140px) rotate(${-(i * 15 - 90)}deg)">${i}</div>`);
-        }
-      </script>
+  <div class="clock-container">
+    <div class="clock">
+      <div class="needle hour" id="hourNeedle"></div>
+      <div class="needle minute" id="minuteNeedle"></div>
+      <div class="needle second" id="secondNeedle"></div>
+      <div class="center-dot"></div>
+      <div class="labels">
+        <script>
+          for (let i = 0; i <= 12; i++) {
+            document.write(`<div class="label" style="transform: rotate(${(i * 15) - 90}deg) translateY(-140px) rotate(${-(i * 15 - 90)}deg)">${i}</div>`);
+          }
+        </script>
+      </div>
     </div>
+    <div class="digital-time" id="digitalTime">--:--:--</div>
   </div>
   <script src="script.js"></script>
 </body>
